@@ -1,0 +1,9 @@
+{% include "inicio.html" %}
+<form action="/people/animal/cadastrar/" method="post">
+    {%csrf_token%}
+    <input type="text" name="tipo"  placeholder="Tipo">
+    <input type="text" name="raca"  placeholder="Raca">
+    <input type="text" name="tamanho"  placeholder="Tamanho">
+
+    <input type="submit" value="Enviar">
+</form>

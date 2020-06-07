@@ -1,0 +1,23 @@
+{% include "inicio.html" %}
+<form action="/people/cadastrar/" method="post">
+    {%csrf_token%}
+    <input type="text" name="nome"  placeholder="Nome">
+    <input type="text" name="idade"  placeholder="Idade">
+    <input type="text" name="nascimento"  placeholder="Nascimento">
+    <input type="text" name="cpf"  placeholder="CPF">
+
+    <input type="text" name="logradouro"  placeholder="Logradouro">
+    <input type="text" name="numero"  placeholder="Numero">
+    <input type="text" name="bairro"  placeholder="Bairro">
+    <input type="text" name="cep"  placeholder="CEP">
+
+    <select name="animal">
+        {% for a in animais %}
+            <option value="{{a.id}}">{{a.tipo}}</option>
+        {% endfor %}
+    </select>
+    <input type="text" name="nome_animal"  placeholder="Nome Animal">
+    
+    <input type="submit" value="Enviar">
+
+</form>

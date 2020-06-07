@@ -1,0 +1,9 @@
+{% include "inicio.html" %}
+<form action="/people/animal/update/{{animal.id}}/" method="post">
+    {%csrf_token%}
+    <input type="text" name="tipo"  placeholder="Nome" value="{{animal.tipo}}">
+    <input type="text" name="raca"  placeholder="Idade" value="{{animal.raca}}">
+    <input type="text" name="tamanho"  placeholder="Nascimento" value="{{animal.tamanho}}">
+    
+    <input type="submit" value="Enviar">
+</form>

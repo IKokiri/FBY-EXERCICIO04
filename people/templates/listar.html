@@ -1,0 +1,33 @@
+{% include "inicio.html" %}
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Idade</td>
+                <td>Nascimento</td>
+                <td>CPF</td>
+                <td>Editar</td>
+                <td>Deletar</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pessoa in lista %}
+            <tr>
+                <td>{{pessoa.nome}}</td>            
+                <td>{{pessoa.idade}}</td>            
+                <td>{{pessoa.data_nascimento}}</td>            
+                <td>{{pessoa.cpf}}</td>
+                <td>
+                    <a href="/people/editar/{{pessoa.id}}">Editar</a>
+                </td>
+                <td>
+                    <a href="/people/excluir/{{pessoa.id}}">Excluir</a>
+                </td>
+            </tr>
+        {% endfor %}    
+        </tbody>
+    </table>
+</div>
+
+

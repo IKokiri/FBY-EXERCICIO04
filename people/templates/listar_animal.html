@@ -1,0 +1,29 @@
+{% include "inicio.html" %}
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>Tipo</td>
+                <td>Raça</td>
+                <td>Tamanho</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for animal in lista %}
+            <tr>
+                <td>{{animal.tipo}}</td>            
+                <td>{{animal.raca}}</td>            
+                <td>{{animal.tamanho}}</td>            
+                <td>
+                    <a href="/people/animal/editar/{{animal.id}}">Editar</a>
+                </td>
+                <td>
+                    <a href="/people/animal/excluir/{{animal.id}}">Excluir</a>
+                </td>
+            </tr>
+        {% endfor %}    
+        </tbody>
+    </table>
+</div>
+
+

@@ -1,0 +1,26 @@
+{% include "inicio.html" %}
+<form action="/people/update/{{pessoa.id}}/" method="post">
+    {%csrf_token%}
+    <input type="text" name="nome"  placeholder="Nome" value="{{pessoa.nome}}">
+    <input type="text" name="idade"  placeholder="Idade" value="{{pessoa.idade}}">
+    <input type="text" name="nascimento"  placeholder="Nascimento" value="{{pessoa.data_nascimento}}">
+    <input type="text" name="cpf"  placeholder="CPF" value="{{pessoa.cpf}}">
+    <input type="text" name="logradouro"  placeholder="Logradouro" value="{{endereco.logradouro}}">
+    <input type="text" name="numero"  placeholder="Numero" value="{{endereco.numero}}">
+    <input type="text" name="bairro"  placeholder="Bairro" value="{{endereco.bairro}}">
+    <input type="text" name="cep"  placeholder="CEP" value="{{endereco.cep}}">
+    
+    <select name="animal">
+        {% for a in animais %}
+        {% if a.id == animal.animal_id %}
+            <option selected data="{{animal.animal_id}}" value="{{a.id}}">{{a.tipo}}</option>
+        {%else%}
+        <option data="{{animal.animal_id}}" value="{{a.id}}">{{a.tipo}}</option>
+        {%endif%}
+        {% endfor %}
+    </select>
+ 
+    <input type="text" name="nome_animal"  placeholder="Nome Animal" value="{{animal.nome}}">
+
+    <input type="submit" value="Enviar">
+</form>
